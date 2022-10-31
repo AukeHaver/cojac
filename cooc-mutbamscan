@@ -58,7 +58,7 @@ def parse_args():
 		assert os.path.isfile(args.samples), f"cannot find sample file {args.samples}"
 	elif args.alignments is not None:
 		for align in args.alignments:
-			assert os.path.isfile(align), f"cannot find alginment file {align}"
+			assert os.path.isfile(align), f"cannot find alignment file {align}"
 	elif not args.outamp:
 		print("at least one of --alignements --samples or --out-amplicons need to be specified")
 		sys.exit(2)
@@ -157,7 +157,7 @@ def scanamplicon(read_iter, mut_dict):
 def findbam(prefix, batch, sample):
 	'''function to find bam from prefix, batch and sample'''
 	alnfname=os.path.join(prefix,sample,batch,'alignments/REF_aln.bam')
-	assert os.path.isfile(alnfname), f"cannot find alginment file {alnfname}"
+	assert os.path.isfile(alnfname), f"cannot find alignment file {alnfname}"
 	return alnfname
 
 
